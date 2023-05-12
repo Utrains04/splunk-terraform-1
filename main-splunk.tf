@@ -8,7 +8,6 @@ resource "aws_vpc" "my-vpc" {
   }
 }
 
-
 # Create Web Public Subnet
 resource "aws_subnet" "web-subnet" {
   vpc_id                  = aws_vpc.my-vpc.id
