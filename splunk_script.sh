@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo yum install iotop -y
+sudo yum install sysstat -y
 cd  /opt
 # Download the Splunk Enterprise tar file
 sudo wget -O splunk-9.0.4.1-419ad9369127-Linux-x86_64.tgz "https://download.splunk.com/products/splunk/releases/9.0.4.1/linux/splunk-9.0.4.1-419ad9369127-Linux-x86_64.tgz"
@@ -11,7 +13,7 @@ sudo tar -zxvf splunk-9.0.4.1-419ad9369127-Linux-x86_64.tgz -C /opt
 #chown -R $(whoami):$(whoami) /opt/splunk
 cd splunk/bin/
 # Start Splunk Enterprise and set up the admin user and password
-sudo ./splunk start --accept-license
+sudo splunk start --accept-license
 #set the hostname
 #sudo ./splunk set servername splunk-server
 #enable splunk at the startup

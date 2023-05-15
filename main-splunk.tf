@@ -123,7 +123,7 @@ resource "aws_instance" "splunk-server" {
   subnet_id              = aws_subnet.web-subnet.id
   vpc_security_group_ids = ["${aws_security_group.web-sg.id}"]
   key_name               = aws_key_pair.ec2-key.key_name
-  user_data            = file("splunk_script.sh")
+  user_data              = file("splunk_script.sh")
   # Set the instance's root volume to 30 GB
   root_block_device {
     volume_size = 30
@@ -142,7 +142,7 @@ resource "aws_instance" "splunk-forwarder" {
   subnet_id              = aws_subnet.web-subnet.id
   vpc_security_group_ids = ["${aws_security_group.web-sg.id}"]
   key_name               = aws_key_pair.ec2-key.key_name
-  user_data            = file("splunk_forwarder_script.sh")
+  user_data              = file("splunk_forwarder_script.sh")
   # Set the instance's root volume to 30 GB
   root_block_device {
     volume_size = 30
